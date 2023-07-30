@@ -1,4 +1,3 @@
-import './Components.css'
 import profileImg from '../img/profilePic.jpg'
 
 function Search(){

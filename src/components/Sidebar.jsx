@@ -1,5 +1,3 @@
-import './Components.css'
-
 //Importing other components in
 import Navbar from './Navbar.jsx'
 import Search from './Search.jsx'

@@ -1,5 +1,3 @@
-import './pagesCss/Home.css'
-
 //Importing components into the page
 import Sidebar from '../components/Sidebar.jsx'
 import Chat from '../components/Chat.jsx'

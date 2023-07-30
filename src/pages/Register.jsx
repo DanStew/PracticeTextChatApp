@@ -1,4 +1,3 @@
-import './pagesCss/Register.css'
 import imgIcon from '../img/imgIcon.jpg'
 
 function Register(){

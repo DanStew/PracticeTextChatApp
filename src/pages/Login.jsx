@@ -1,5 +1,3 @@
-import './pagesCss/Register.css'
-
 function Login(){
     return(
         <div className="formContainer">
