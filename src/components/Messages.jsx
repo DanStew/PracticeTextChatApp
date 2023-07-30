@@ -1,3 +1,5 @@
+import Message from './Message.jsx'
+
 function Messages(){
     return(
         <div className="messages">

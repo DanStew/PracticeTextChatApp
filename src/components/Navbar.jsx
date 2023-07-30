@@ -5,9 +5,9 @@ function Navbar(){
         <div className="navbar">
             <span className="logo">Text Chat App</span>
             <div className="user">
-                <img className="profileImg" src={profileImg} alt="" />
-                <span className='username'>John</span>
-                <button className='logOut'>Log Out</button>
+                <img src={profileImg} alt="" />
+                <span>John</span>
+                <button>Log Out</button>
             </div>
         </div>
     )

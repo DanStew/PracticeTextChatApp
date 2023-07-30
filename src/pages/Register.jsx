@@ -15,8 +15,8 @@ function Register(){
                     {/* Code below replaces the hidden input with alternative elements and styling
                         The elements below will function as if it was the file input still, just look different */}
                     <label htmlFor='file'>
-                        <img id="imgIcon" src={imgIcon} alt=""/>
-                        <span>Add and Avatar</span>
+                        <img src={imgIcon} alt=""/>
+                        <span>Add an Avatar</span>
                     </label>
                     <button>Sign Up</button>
                 </form>
