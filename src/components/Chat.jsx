@@ -1,6 +1,8 @@
+import './Components.css'
+
 function Chat(){
     return(
-        <div>
+        <div className="chat">
             Chat
         </div>
     )

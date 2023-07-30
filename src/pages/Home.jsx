@@ -1,10 +1,17 @@
 import './pagesCss/Home.css'
 
+//Importing components into the page
+import Sidebar from '../components/Sidebar.jsx'
+import Chat from '../components/Chat.jsx'
+
 function Home(){
     return(
-        <>
-            Home
-        </>
+        <div className='home'>
+            <div className='container'>
+                <Sidebar/>
+                <Chat/>
+            </div>
+        </div>
     )
 }
 
