@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { doc, setDoc } from 'firebase/firestore'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import imgIcon from '../img/imgIcon.jpg'
 
@@ -55,6 +55,7 @@ function Register(){
 
                         await setDoc(doc(db, "userChats", res.user.uid), {})
 
+                        //Code that sends the user to the / path (Home Page)
                         navigate("/")
                     })
                 }
@@ -85,7 +86,7 @@ function Register(){
                     <button>Sign Up</button>
                     {err && <span>Something Went Wrong...</span>}
                 </form>
-                <p>You do have an account? <a href="">Login</a></p>
+                <p>You do have an account? <Link to="/login">Login</Link></p>
             </div>
         </div>
     )

@@ -7,11 +7,17 @@ import options from '../img/threeDots.jpg'
 import Messages from './Messages.jsx'
 import Input from './Input.jsx'
 
+//Importing needed functions into the code
+import { useContext } from 'react'
+import { ChatContext } from '../context/ChatContext'
+
 function Chat(){
+
+    const {data} = useContext(ChatContext)
     return(
         <div className="chat">
             <div className="chatInfo">
-                <span>Jane</span>
+                <span>{data.user?.displayName}</span>
                 <div className="chatIcons">
                     <img src={camera} alt="Camera" />
                     <img src={addFriend} alt="Add Friend" />
