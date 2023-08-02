@@ -2,7 +2,7 @@
 import { useContext, useEffect, useRef } from 'react'
 import { AuthContext } from '../context/AuthContext'
 import { ChatContext } from '../context/ChatContext'
-import { Timestamp } from 'firebase/firestore'
+import { Timestamp, serverTimestamp } from 'firebase/firestore'
 
 function Message({message}){
 
@@ -10,14 +10,40 @@ function Message({message}){
     const {currentUser} = useContext(AuthContext)
     const {data} = useContext(ChatContext)
 
+    //UseRef is used to implement smooth scrolling when a new message is sent
     const ref = useRef()
 
+    //Function to implement the smooth scrolling
+    //Implemented for every new message sent on the system
     useEffect(() => {
         ref.current?.scrollIntoView({behavior:"smooth"})
     },[message])
 
-    function findTime(){
-        
+    //Function to return the correct time to the users screen
+    function findTime(){ 
+        const timeSent = message.date.seconds
+        const timeNow = Timestamp.now().seconds
+        const timeAgo = timeNow - timeSent;
+        let roundedTime = Math.round(timeAgo)
+        let output = ""
+        if (timeAgo < 5){
+            output = "Just Now"
+        }
+        else if (timeAgo < 60){
+            output = roundedTime + " seconds ago"
+        }
+        else{
+            roundedTime = Math.floor(roundedTime / 60)
+            if (roundedTime < 60){
+                output = roundedTime + " minutes ago"
+            }
+            else{
+                roundedTime = Math.floor(roundedTime / 60)
+                roundedTime < 24 ? output = roundedTime + " hours ago " : output= "A while ago"
+            }
+        }
+
+        return output
     }
 
     return(

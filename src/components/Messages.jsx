@@ -15,6 +15,7 @@ function Messages(){
             doc.exists() && setMessages(doc.data().messages)
         })
 
+        //Cleanup function to stop memory leaking
         return () => {
             unsub()
         }

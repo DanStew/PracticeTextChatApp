@@ -11,10 +11,11 @@ export const AuthContextProvider = ({children}) =>{
     //Creating the currentUsers of the site
     const [currentUser, setCurrentUser] = useState({})
 
+    //Creating a useEffect component to find the users that are currently on the site
     useEffect(() =>{
         const unsub = onAuthStateChanged(auth,(user)=>{
+            //Setting the current user
             setCurrentUser(user)
-            console.log(user)
         });
 
         //The code is implemented this way as, without a cleanup function, there will be memory leaking from the function
@@ -23,6 +24,7 @@ export const AuthContextProvider = ({children}) =>{
         }
     },[]);
 
+    //Returing the Context Component
     return(
         <AuthContext.Provider value={{currentUser}}>
             {children}
